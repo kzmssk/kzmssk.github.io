@@ -1,5 +1,5 @@
 publishDir = 'docs'
-baseURL = 'https://kzmssk.github.io/kzmssk'
+baseURL = 'https://kzmssk.github.io/'
 languageCode = 'ja'
 title = 'kzmssk'
 disableKinds = ["taxonomy"]
