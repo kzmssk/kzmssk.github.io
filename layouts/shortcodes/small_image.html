@@ -1,0 +1,10 @@
+{{- $src := .Get 0 -}}
+{{- $title := .Get 1 -}}
+<div class="row is-center">
+    <div class="col-4-lg col-4-md col-8">
+        <img src="{{ $src }}"
+        title="{{ $title }}"
+        />
+        <figcaption class="text-center">{{- $title -}}</figcaption>
+    </div>
+</div>

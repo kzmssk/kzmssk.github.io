@@ -1,0 +1,9 @@
+<div class="row is-center">
+    <div class="col-6-lg col-8-md col-12">
+        <img src="{{ .Destination }}"
+        {{- with .Text }}alt="{{ . }}"{{ end -}}
+        {{- with .Title }}title="{{ . }}"{{ end -}}
+        />
+        <figcaption class="text-center">{{- .Title -}}</figcaption>
+    </div>
+</div>

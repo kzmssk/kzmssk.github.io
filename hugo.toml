@@ -1,0 +1,29 @@
+baseURL = 'https://kzmssk.github.io/'
+languageCode = 'ja'
+title = 'kzmssk'
+disableKinds = ["taxonomy"]
+images = ['teaser.png']
+
+[params]
+    descrption = 'Website of Kazuma Sasaki'
+    math = true
+
+[module]
+  [[module.mounts]]
+    source = 'assets/css'
+    target = 'static/css'
+  [[module.mounts]]
+    source = 'assets/img'
+    target = 'static/img'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+  
+  [markup.highlight]
+    style = 'tango'

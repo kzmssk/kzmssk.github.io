@@ -1,3 +1,3 @@
 # kzmssk
 
-[web](https://kzmssk.github.io)# kzmssk
+[web](https://kzmssk.github.io) kzmssk
