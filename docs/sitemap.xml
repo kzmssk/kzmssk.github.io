@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://kzmssk.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2021-02-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kzmssk.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2021-02-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://kzmssk.github.io/posts/free-energy-principle-tutorial/</loc>
+    <loc>http://localhost:1313/posts/free-energy-principle-tutorial/</loc>
     <lastmod>2021-02-23T00:00:00+00:00</lastmod>
   </url>
 </urlset>

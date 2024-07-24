@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <title>kzmssk</title><meta http-equiv="content-style-type" content="text/css">
 <meta http-equiv="content-script-type" content="text/javascript">
@@ -202,7 +202,7 @@ $$
 $$
 p(\varphi_{[n]}|\mu_{[n]}) = \frac{1}{\sqrt{ 2 \pi \sigma_{z[n]}}} \exp \Big[ -\frac{ \{ \varphi_{[n]} - g_{[n]} \}^2 }{ 2 \sigma_{z[n]} } \Big]
 $$
-<p>ここで\(\sigma_{z_{[n]}}\)は$n$階におけるガウス分布の分散をあらわしている。</p>
+<p>ここで\(\sigma_{z_{[n]}}\)は\(n\)階におけるガウス分布の分散をあらわしている。</p>
 <p>\(p(\tilde{\mu})\)は1つ下の階の\(\mu\)による条件付き分布の積和を使って表現する:</p>
 $$
 \begin{aligned}
@@ -228,7 +228,7 @@ $$
 <p>「いかなる自己組織化されたシステムでも環境内で平衡状態であるためには、そのシステムの（情報的）自由エネルギーを最小化しなくてはならない」という規範的な原理</p>
 </blockquote>
 <p>だった。自由エネルギーを最小化するということは知覚行動モデルにおいて2つの意味をもつ。ここまでのLaplace approximationの結果を例にみていこう。</p>
-<p>1つ目は<em>Recognition dynamics</em>と呼ばれる。これは知覚（Perception）に相当する過程であり、脳の状態\(\mu\)を自由エネルギー\(F\)が最小になるように変更することに対応している。勾配法(Gradient descent)を使った最小化のための更新式は以下のようになる。実時間ステップ$t$における\(\mu_{[n]}\)のを状態\(\mu^t_{[n]}\)として、</p>
+<p>1つ目は<em>Recognition dynamics</em>と呼ばれる。これは知覚（Perception）に相当する過程であり、脳の状態\(\mu\)を自由エネルギー\(F\)が最小になるように変更することに対応している。勾配法(Gradient descent)を使った最小化のための更新式は以下のようになる。実時間ステップ\(t\)における\(\mu_{[n]}\)のを状態\(\mu^t_{[n]}\)として、</p>
 $$
 \mu^{t+1}_{[n]} = \mu^t_{[n]} - \kappa \nabla \hat{\mu}_{[n]} E(\mu_{[n]}, \varphi_{[n]})
 $$
@@ -237,7 +237,7 @@ $$
 \(\mu^t_{[n]}\)の更新ダイナミクスはG-densityのところで考えたGeneralized coordinatesの\(\mu\)内部の時間オーダーとは異なる。たとえば\(\mu\)の速度の微分と、同じく\(\mu\)の加速度は区別される。これは一見おかしいことかのように見えるが、センサの変化（速度）を予測している、と考えればよい。</p>
 <p>センサ入力をより説明できるようR-densityを変えることで自由エネルギーを下げるのが認識だった。
 さらにエージェントは別の方法でも自由エネルギーを下げることができる。それは行動によって環境の状態を変えセンサ入力を間接的に変えることだ。これは <strong>能動知覚(Active inference)</strong> に相当する。
-このためにはエージェントは行動がどのようにセンサ入力を変化させるかのモデルを保持している必要がある。このモデルはInverse modelと呼ばれる。この仮定のもとで行動$a$の更新量は\(\mu^t_{[n]}\)と同様の表記を使うと</p>
+このためにはエージェントは行動がどのようにセンサ入力を変化させるかのモデルを保持している必要がある。このモデルはInverse modelと呼ばれる。この仮定のもとで行動\(a\)の更新量は\(\mu^t_{[n]}\)と同様の表記を使うと</p>
 $$
 a^{t+1} = a^{t} - \kappa \nabla_a \frac{d\tilde{\varphi}}{da} \cdot E(\tilde{\mu},\tilde{\varphi})
 $$
@@ -312,6 +312,6 @@ World Modelは人間の脳モデルをヒントとして提案された方法だ
     </article>
 </div><hr style="background-color: #FFFFFF">
 <div class="text-center">
-    <p><a href="https://kzmssk.github.io/">https://kzmssk.github.io/</a></p>
+    <p><a href="http://localhost:1313/">http://localhost:1313/</a></p>
 </div></body>
 </html>
