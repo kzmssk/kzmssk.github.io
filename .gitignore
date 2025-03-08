@@ -1,9 +1,10 @@
+.DS_Store
 # Created by https://www.toptal.com/developers/gitignore/api/hugo
 # Edit at https://www.toptal.com/developers/gitignore?templates=hugo
 
 ### Hugo ###
 # Generated files by hugo
-# /public/
+/public/
 /resources/_gen/
 /assets/jsconfig.json
 hugo_stats.json
