@@ -15,7 +15,7 @@ $$
 
 ## Advantageの近似方法
 
-Advantageの近似にはさまざまな方法がある。たとえば、\( Q \) の代わりに状態 \( s_t \) で行動 \( a_t \) を選択した場合の実際の報酬和 \(g(s_t, a_t) \) を使い、また状態価値をモンテカルロ法で推定した上で \( A(s_t, a_t) \approx g(s_t, a_t) - V(s_t; \phi) \) とし、重みづけを加えたのが [Advantage Weighted Regression (AWR)](https://arxiv.org/abs/1910.00177) である。TD法による近似を考えると、AdvantageはTD誤差の推定量であるともみなせる。つまり \( A(s_t, a_t) \approx r_t + V(s_{t+1}) - V(s_t) \) である。モンテカルロ法とTD法の間をとったのが [Generalized Advantage Estimation (GAE)](https://arxiv.org/abs/1506.02438) である:
+Advantageの近似にはさまざまな方法がある。たとえば、\( Q \) の代わりに状態 \( s_t \) で行動 \( a_t \) を選択した場合の実際の報酬和 \(g(s_t, a_t) \) を使い、また状態価値をモンテカルロ法で推定した上で \( A(s_t, a_t) \approx g(s_t, a_t) - V(s_t; \phi) \) とし、重みづけを加えて方策の学習をするのが [Advantage Weighted Regression (AWR)](https://arxiv.org/abs/1910.00177) である。TD法による近似を考えると、AdvantageはTD誤差の推定量であるともみなせる。つまり \( A(s_t, a_t) \approx r_t + V(s_{t+1}) - V(s_t) \) である。モンテカルロ法とTD法の間をとったのが [Generalized Advantage Estimation (GAE)](https://arxiv.org/abs/1506.02438) である:
 
 $$
 A(s_t, a_t) \approx \sum_{l=0}^{T} \lambda^l \delta_{t+l}
