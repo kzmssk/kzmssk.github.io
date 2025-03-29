@@ -12,4 +12,16 @@
     <article>
         {{ .Content }}
     </article>
+    <nav class="nav">
+        {{ with .Prev }}
+            <div class="nav-left">
+                <a href="{{ .RelPermalink }}" class="active"><< {{ .Title }}</a>
+            </div>
+        {{ end }}
+        {{ with .Next }}
+            <div class="nav-right">
+                <a href="{{ .RelPermalink }}" class="active">>> {{ .Title }}</a>
+            </div>
+        {{ end }}
+    </nav>
 {{ end }}

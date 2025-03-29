@@ -1,4 +1,4 @@
-![伊豆で撮った草むら](/img/teaser.png "伊豆で撮った草むら")
+![](/img/teaser.png)
 
 ## kzmssk
 
