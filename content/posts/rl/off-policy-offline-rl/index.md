@@ -15,7 +15,7 @@ $$
 \mathbb{E}_\pi[x] \simeq \sum x \pi(x) = \sum x \frac{b(x)}{b(x)} \pi(x) = \mathbb{E}_b \Bigl[\frac{\pi(x)}{b(x)} x\Bigr]
 $$
 
-Target Policy の代わりに Behavior Policy でサンプリングし、その違いを後で \( \pi(x) \) により補正する。この手法では方策比を用いて乖離を埋めるが、乖離が大きい場合は分散が増大するため、分散低減のための各種手法が提案されている。たとえば、分散低減を狙った方策勾配法を用いる [IMPALA](https://arxiv.org/abs/1802.01561) で採用されるRetraceでは、方策比に一定のクリップを加えて安定化を図る。他にも軌道全体の比率を利用する方法もあるが、[この論文](https://arxiv.org/abs/2005.01643)によくまとまっている。
+Target Policy の代わりに Behavior Policy でサンプリングし、その違いを後で \( \pi(x) \) により補正する。この手法では方策比を用いて乖離を埋めるが、乖離が大きい場合は分散が増大するため、分散低減のための各種手法が提案されている。たとえば、分散低減を狙った方策勾配法を用いる [IMPALA](https://arxiv.org/abs/1802.01561) で提案されたRetraceでは、方策比にクリップを加えて安定化を図る。他にも軌道全体の比率を利用する方法もあり、[この論文](https://arxiv.org/abs/2005.01643)によくまとまっている。
 
 方策乖離の緩和策として、更新量を制限する保守的な方策更新がある。代表例としては [Trust Region Policy Optimization（TRPO）](https://arxiv.org/abs/1502.05477) が挙げられる。TRPOは、データサンプルにおける価値最大化とBehavior PolicyとのKL距離の最小化という2つの目的を組み合わせた損失を用いる。この考えをシンプルにしたのが [Proximal Policy Optimization (PPO)](https://arxiv.org/abs/1707.06347) で、方策比 \( \pi(a|s) / b(a|s) \) が一定範囲に収まるかどうかで損失の形状を調整する。なお、TRPOおよびPPOは主にオンポリシーRLに分類されるが、オンラインRLにおいても方策の乖離の影響は避けがたい問題である。実際、PPOの安定性は大規模言語モデルの追加学習手法である [Deep reinforcement learning from human preferences (HFRL)](https://arxiv.org/abs/1706.03741) にも寄与している。
 
@@ -31,7 +31,7 @@ $$
 L(\phi) = - \log \pi (a|s;\theta) \exp \frac{1}{\beta} A(s, a)
 $$
 
-大規模言語モデル（LLM）の追加学習手法として提案された [Direct Preference Optimization (DDP)](https://arxiv.org/abs/2305.18290) は、BC-ObjectiveとRM-Objectiveを組み合わせた最適化問題として定式化される:
+大規模言語モデル（LLM）の追加学習手法として提案された [Direct Preference Optimization (DPO)](https://arxiv.org/abs/2305.18290) は、BC-ObjectiveとRM-Objectiveを組み合わせた最適化問題として定式化される:
 
 $$
 \max_{\pi_\theta} \mathbb{E} [r(s, a)] - \beta \text{KL}\Bigl[\pi(a|s;\theta) \,\big|\big|\, \pi_{ref}(a|s)\Bigr]
