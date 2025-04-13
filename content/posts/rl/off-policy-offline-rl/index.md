@@ -25,7 +25,7 @@ Target Policy の代わりに Behavior Policy でサンプリングし、その�
 
 静的なデータセットからサンプリングされた状態を入力とし、それに伴う方策（例：人間の行動）を教師信号とするBehavior Cloning (BC) は、オフラインな学習手法のもっともベーシックな方法だろう。BCはシンプルだが、最適な場合でもエピソード長の二乗に比例してデータセットを構築する方策との乖離（Distributional Shift）が生じることが示されている。直感的には、ある時点での小さな誤差が次時刻の状態や行動推定の誤差へと波及するためだ。オフラインRLでは、報酬を組み合わせることでDistributional Shiftを低減することが試みられている。
 
-オフラインRLは、データセット \( D \) を作成した未知のBehavior Policy \( b(a|s) \) を模倣するBC-Objectiveと、多少の乖離を許容してでも報酬を獲得するReward-Maximization (RM) Objectiveという2つの目的を同時に達成する必要がある。たとえば、[Advantage Weighted Regression (AWR)](https://arxiv.org/abs/1910.00177) は、Policy Searchに着想を得た重み付けBC損失を用いる手法であり、BCの制約付き方策勾配法とみなすことができる:
+オフラインRLは、データセット \( D \) を作成した未知のBehavior Policy \( b(a|s) \) を模倣するBCの目的と、多少の乖離を許容してでも報酬を獲得するという2つの目的を同時に達成する必要がある。仮に、これら2つの目的をそれぞれBC-Objective, Reward-Maximization (RM) Objectiveと呼ぶことにしよう。[Advantage Weighted Regression (AWR)](https://arxiv.org/abs/1910.00177) は、Policy Searchに着想を得た重み付けBC損失を用いる手法であり、BCの制約付き方策勾配法とみなすことができる:
 
 $$
 L(\phi) = - \log \pi (a|s;\theta) \exp \frac{1}{\beta} A(s, a)
